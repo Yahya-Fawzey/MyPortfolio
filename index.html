@@ -6,62 +6,127 @@
     <title>Yahya Fawzey - Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
+            background: #ecf0f1;
+            overflow-x: hidden;
         }
         header {
-            background: #007BFF;
+            background: linear-gradient(120deg, #3498db, #9b59b6);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2.5rem 0;
             text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
             margin: 0;
+            font-size: 3rem;
         }
         nav {
             text-align: center;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         nav a {
-            margin: 0 1rem;
+            display: inline-block;
+            margin: 0 1.2rem;
             text-decoration: none;
-            color: #007BFF;
+            color: #34495e;
             font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #3498db;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #3498db;
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 2rem auto;
+            width: 85%;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: slideIn 1s ease-in-out;
         }
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         .section h2 {
-            color: #007BFF;
-            border-bottom: 2px solid #007BFF;
+            color: #3498db;
+            border-bottom: 3px solid #9b59b6;
             padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.8rem;
         }
         footer {
-            background: #333;
-            color: #fff;
+            background: #34495e;
+            color: #ecf0f1;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
         }
         footer a {
-            color: #fff;
+            color: #ecf0f1;
             text-decoration: underline;
         }
-        @media (max-width: 600px) {
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .skill {
+            padding: 0.7rem 1.5rem;
+            background: #9b59b6;
+            color: #fff;
+            border-radius: 25px;
+            font-size: 1rem;
+            animation: popIn 0.5s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .skill:hover {
+            background: #8e44ad;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @media (max-width: 768px) {
             nav a {
-                display: block;
-                margin: 0.5rem 0;
+                margin: 0.7rem 0;
+            }
+            .skills {
+                flex-direction: column;
             }
         }
     </style>
@@ -76,6 +141,7 @@
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#activities">Activities</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
@@ -103,6 +169,16 @@
                 <li>Active member of a campus club, contributing to workshops and events.</li>
                 <li>Mentored junior members by sharing knowledge and guiding technical projects.</li>
             </ul>
+        </div>
+        <div id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">Java</div>
+                <div class="skill">Python</div>
+                <div class="skill">R</div>
+                <div class="skill">SQL</div>
+                <div class="skill">HTML</div>
+            </div>
         </div>
         <div id="contact" class="section">
             <h2>Contact</h2>
