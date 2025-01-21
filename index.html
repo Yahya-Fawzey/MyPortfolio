@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahya Fawzey - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -11,15 +14,18 @@
             padding: 0;
             line-height: 1.6;
             color: #2c3e50;
-            background: #ecf0f1;
+            background: #f5f5f5;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         header {
-            background: linear-gradient(120deg, #3498db, #9b59b6);
+            background: linear-gradient(120deg, #004080, #000);
             color: #fff;
             padding: 2.5rem 0;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
+            background-attachment: fixed;
+            border-radius: 0 0 50% 50% / 5%;
         }
         header h1 {
             margin: 0;
@@ -33,21 +39,21 @@
             display: inline-block;
             margin: 0 1.2rem;
             text-decoration: none;
-            color: #34495e;
+            color: #2c3e50;
             font-weight: bold;
             font-size: 1.1rem;
             position: relative;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #3498db;
+            color: #004080;
         }
         nav a::after {
             content: '';
             display: block;
             width: 0;
             height: 3px;
-            background: #3498db;
+            background: #000;
             transition: width 0.3s;
         }
         nav a:hover::after {
@@ -60,18 +66,35 @@
             padding: 2rem;
             background: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 20px;
             animation: slideIn 1s ease-in-out;
         }
         .section {
             margin-bottom: 2.5rem;
         }
         .section h2 {
-            color: #3498db;
-            border-bottom: 3px solid #9b59b6;
+            color: #004080;
+            border-bottom: 3px solid #000;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 1rem 0;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .about-card { background: #ffcccb; }
+        .education-card { background: #c0e8d5; }
+        .projects-card { background: #f0e68c; }
+        .activities-card { background: #add8e6; }
+        .skills-card { background: #d3d3d3; }
+        .contact-card { background: #d8bfd8; }
         ul {
             list-style: none;
             padding: 0;
@@ -80,14 +103,15 @@
             margin-bottom: 0.8rem;
         }
         footer {
-            background: #34495e;
-            color: #ecf0f1;
+            background: #2c3e50;
+            color: #f5f5f5;
             text-align: center;
             padding: 1.5rem 0;
             margin-top: 3rem;
+            border-radius: 50% 50% 0 0 / 5%;
         }
         footer a {
-            color: #ecf0f1;
+            color: #f5f5f5;
             text-decoration: underline;
         }
         .skills {
@@ -99,15 +123,17 @@
         }
         .skill {
             padding: 0.7rem 1.5rem;
-            background: #9b59b6;
+            background: #000;
             color: #fff;
             border-radius: 25px;
             font-size: 1rem;
             animation: popIn 0.5s ease-in-out;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.3s;
         }
         .skill:hover {
-            background: #8e44ad;
+            background: #004080;
+            transform: scale(1.05);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -132,7 +158,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="animate__animated animate__fadeIn">
         <h1>Yahya Fawzey</h1>
         <p>Computer Science Student | Aspiring Developer</p>
     </header>
@@ -144,17 +170,17 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
-    <div class="container">
-        <div id="about" class="section">
+    <div class="container animate__animated animate__slideInLeft">
+        <div id="about" class="section card about-card">
             <h2>About Me</h2>
             <p>I am a committed and resourceful second-year computer science student with a strong passion for programming and problem-solving. My academic journey has equipped me with solid technical skills, and I am eager to apply these in real-world applications. I thrive in collaborative environments, developing effective teamwork and communication abilities through academic projects and extracurricular activities.</p>
         </div>
-        <div id="education" class="section">
+        <div id="education" class="section card education-card">
             <h2>Education</h2>
             <p><strong>Faculty of Computers and Data Science</strong>, Alexandria University<br>Expected Graduation: June 2027</p>
             <p>Relevant Coursework: Data Structures & Algorithms, Computer Organization & Programming, Object-Oriented Programming, Statistics & Applications.</p>
         </div>
-        <div id="projects" class="section">
+        <div id="projects" class="section card projects-card">
             <h2>Projects</h2>
             <ul>
                 <li><strong>Banking System with GUI:</strong> Collaborated to create a user-friendly banking system with an effective graphical interface.</li>
@@ -162,7 +188,7 @@
                 <li><strong>Large Dataset Processing:</strong> Managed and analyzed a dataset of over 100,000 records, producing insightful visualizations and contributing to data-driven decisions.</li>
             </ul>
         </div>
-        <div id="activities" class="section">
+        <div id="activities" class="section card activities-card">
             <h2>Activities</h2>
             <ul>
                 <li>Regularly engages in self-learning through online courses and programming challenges.</li>
@@ -170,7 +196,7 @@
                 <li>Mentored junior members by sharing knowledge and guiding technical projects.</li>
             </ul>
         </div>
-        <div id="skills" class="section">
+        <div id="skills" class="section card skills-card">
             <h2>Skills</h2>
             <div class="skills">
                 <div class="skill">Java</div>
@@ -180,11 +206,11 @@
                 <div class="skill">HTML</div>
             </div>
         </div>
-        <div id="contact" class="section">
+        <div id="contact" class="section card contact-card">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:yahyafawzey530@gmail.com">yahyafawzey530@gmail.com</a></p>
             <p>Phone: 01002740886</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yahyafawzey/" target="_blank">Yahya Fawzey</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yahya-fawzey-3954a731a/" target="_blank">Yahya Fawzey</a></p>
             <p>GitHub: <a href="https://github.com/Yahya-Fawzey" target="_blank">Yahya-Fawzey</a></p>
         </div>
     </div>
