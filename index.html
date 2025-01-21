@@ -13,18 +13,41 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: #2c3e50;
-            background: #f5f5f5;
+            color: #d3d3d3;
+            background: #0b0f1a;  /* Very dark blue background */
             overflow-x: hidden;
             scroll-behavior: smooth;
+            position: relative;
+        }
+        .floating-codes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .floating-codes span {
+            position: absolute;
+            color: rgba(0, 255, 0, 0.1);  /* Green color for the floating codes */
+            font-size: 2rem;
+            animation: float 7s linear infinite;
+        }
+        @keyframes float {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-1000px) rotate(360deg);
+                opacity: 0;
+            }
         }
         header {
-            background: linear-gradient(120deg, #004080, #000);
+            background: linear-gradient(120deg, #1a1a2e, #16213e);
             color: #fff;
             padding: 2.5rem 0;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
-            background-attachment: fixed;
             border-radius: 0 0 50% 50% / 5%;
         }
         header h1 {
@@ -39,21 +62,21 @@
             display: inline-block;
             margin: 0 1.2rem;
             text-decoration: none;
-            color: #2c3e50;
+            color: #d3d3d3;
             font-weight: bold;
             font-size: 1.1rem;
             position: relative;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #004080;
+            color: #00ff00;  /* Green color on hover */
         }
         nav a::after {
             content: '';
             display: block;
             width: 0;
             height: 3px;
-            background: #000;
+            background: #00ff00;  /* Green color for underline */
             transition: width 0.3s;
         }
         nav a:hover::after {
@@ -64,22 +87,24 @@
             max-width: 1000px;
             margin: 3rem auto;
             padding: 2rem;
-            background: #ffffff;
+            background: #16213e;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
             animation: slideIn 1s ease-in-out;
+            position: relative;
+            z-index: 1;
         }
         .section {
             margin-bottom: 2.5rem;
         }
         .section h2 {
-            color: #004080;
-            border-bottom: 3px solid #000;
+            color: #00ff00;  /* Green color for section titles */
+            border-bottom: 3px solid #00ff00;  /* Green color for section title underline */
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
         .card {
-            background: #ffffff;
+            background: #1a1a2e;
             border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 2rem;
@@ -89,12 +114,12 @@
         .card:hover {
             transform: translateY(-10px);
         }
-        .about-card { background: #ffcccb; }
-        .education-card { background: #c0e8d5; }
-        .projects-card { background: #f0e68c; }
-        .activities-card { background: #add8e6; }
-        .skills-card { background: #d3d3d3; }
-        .contact-card { background: #d8bfd8; }
+        .about-card { background: #232a3d; }
+        .education-card { background: #2c3551; }
+        .projects-card { background: #35406b; }
+        .activities-card { background: #3e4b85; }
+        .skills-card { background: #4756a0; }
+        .contact-card { background: #5061bb; }
         ul {
             list-style: none;
             padding: 0;
@@ -103,15 +128,15 @@
             margin-bottom: 0.8rem;
         }
         footer {
-            background: #2c3e50;
-            color: #f5f5f5;
+            background: #16213e;
+            color: #d3d3d3;
             text-align: center;
             padding: 1.5rem 0;
             margin-top: 3rem;
             border-radius: 50% 50% 0 0 / 5%;
         }
         footer a {
-            color: #f5f5f5;
+            color: #d3d3d3;
             text-decoration: underline;
         }
         .skills {
@@ -123,8 +148,8 @@
         }
         .skill {
             padding: 0.7rem 1.5rem;
-            background: #000;
-            color: #fff;
+            background: #00ff00;
+            color: #000;
             border-radius: 25px;
             font-size: 1rem;
             animation: popIn 0.5s ease-in-out;
@@ -132,7 +157,7 @@
             transition: background 0.3s, transform 0.3s;
         }
         .skill:hover {
-            background: #004080;
+            background: #00cc00;
             transform: scale(1.05);
         }
         @keyframes fadeIn {
@@ -158,6 +183,18 @@
     </style>
 </head>
 <body>
+    <div class="floating-codes">
+        <span>function()</span>
+        <span>if (x)</span>
+        <span>for (i)</span>
+        <span>return</span>
+        <span>var</span>
+        <span>let</span>
+        <span>const</span>
+        <span>while</span>
+        <span>console.log()</span>
+        <span>=> {}</span>
+    </div>
     <header class="animate__animated animate__fadeIn">
         <h1>Yahya Fawzey</h1>
         <p>Computer Science Student | Aspiring Developer</p>
@@ -209,7 +246,6 @@
         <div id="contact" class="section card contact-card">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:yahyafawzey530@gmail.com">yahyafawzey530@gmail.com</a></p>
-            <p>Phone: 01002740886</p>
             <p>LinkedIn: <a href="https://linkedin.com/in/yahya-fawzey-3954a731a/" target="_blank">Yahya Fawzey</a></p>
             <p>GitHub: <a href="https://github.com/Yahya-Fawzey" target="_blank">Yahya-Fawzey</a></p>
         </div>
@@ -217,5 +253,33 @@
     <footer>
         <p>&copy; 2025 Yahya Fawzey. All rights reserved.</p>
     </footer>
+    <div class="floating-codes">
+        <span>function()</span>
+        <span>if (x)</span>
+        <span>for (i)</span>
+        <span>return</span>
+        <span>var</span>
+        <span>let</span>
+        <span>const</span>
+        <span>while</span>
+        <span>console.log()</span>
+        <span>=> {}</span>
+    </div>
+    <script>
+        // Generate random positions for floating codes
+        function createFloatingCodes() {
+            const floatingCodes = document.querySelectorAll('.floating-codes span');
+            const windowHeight = window.innerHeight;
+            floatingCodes.forEach((span) => {
+                span.style.left = Math.random() * window.innerWidth + 'px';
+                span.style.top = Math.random() * windowHeight + 'px';
+                span.style.animationDuration = Math.random() * 7 + 3 + 's';
+                span.style.animationDelay = Math.random() * 3 + 's';
+            });
+        }
+
+        createFloatingCodes();
+        window.addEventListener('resize', createFloatingCodes);
+    </script>
 </body>
 </html>
